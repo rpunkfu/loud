@@ -1,0 +1,43 @@
+{
+  "name": "@rpunkfu/loud",
+  "version": "0.0.0",
+  "description": "Soundcloud client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "standard",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rpunkfu/loud.git"
+  },
+  "author": "rpunkfu <oskarcieslik@gmail.com> (https://github.com/rpunkfu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rpunkfu/loud/issues"
+  },
+  "homepage": "https://github.com/rpunkfu/loud#readme",
+  "devDependencies": {
+    "ava": "0.16.0",
+    "babel-core": "6.18.0",
+    "babel-loader": "6.2.5",
+    "babel-plugin-transform-class-properties": "6.18.0",
+    "babel-plugin-transform-export-extensions": "6.8.0",
+    "babel-plugin-transform-function-bind": "6.8.0",
+    "babel-preset-latest": "6.16.0",
+    "babel-preset-react": "6.16.0",
+    "express": "4.14.0",
+    "standard": "8.5.0",
+    "webpack": "1.13.2",
+    "webpack-dev-middleware": "1.8.4",
+    "webpack-hot-middleware": "2.13.0"
+  },
+  "dependencies": {
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "react-redux": "4.4.5",
+    "react-router": "4.0.0-alpha.5",
+    "redux": "3.6.0"
+  }
+}

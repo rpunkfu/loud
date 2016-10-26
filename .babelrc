@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["latest", { "loose": true }],
+    "react"
+  ],
+  "plugins": [
+    "transform-export-extensions",
+    "transform-class-properties",
+    "transform-function-bind"
+  ]
+}

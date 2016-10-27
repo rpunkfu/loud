@@ -4080,7 +4080,7 @@ postcss-selector-parser@^1.1.4, postcss-selector-parser@^2.0.0, postcss-selector
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-sorting@^1.6.1:
+postcss-sorting, postcss-sorting@^1.6.1:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-1.7.0.tgz#69b92db051ed4181c5b8c585ee8b8c5f40915a82"
   dependencies:
@@ -4918,7 +4918,7 @@ stylehacks@^2.3.0:
     text-table "^0.2.0"
     write-file-stdout "0.0.2"
 
-stylelint:
+stylelint, stylelint@^7.0.3:
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.5.0.tgz#fe19a22e793c419d4fc31d58f3948d599fdb81fb"
   dependencies:
@@ -4961,9 +4961,20 @@ stylelint-config-css-modules:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-css-modules/-/stylelint-config-css-modules-0.1.0.tgz#6fc47c31836caad878e8daabde2b675899c2f4b6"
 
+stylelint-config-idiomatic-order:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-idiomatic-order/-/stylelint-config-idiomatic-order-2.0.0.tgz#2d605f37a9269acada267ef3083ac254034ce1f2"
+  dependencies:
+    stylelint "^7.0.3"
+    stylelint-config-standard "^11.0.0"
+
 stylelint-config-standard:
   version "14.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-14.0.0.tgz#1164b79c3a1dd924ace1b756ad8ec00cbccb8132"
+
+stylelint-config-standard@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-11.0.0.tgz#cff01471660efd050c44e4363f3653b86e3eaaf1"
 
 sugarss@^0.2.0:
   version "0.2.0"

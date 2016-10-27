@@ -1,7 +1,0 @@
-:root {
-  --background: red;
-}
-
-.player {
-  background: var(--background);
-}

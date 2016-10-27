@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Player from 'components/Player'
+import Player from 'containers/Player'
 
 render(
   <Player />,

@@ -1,0 +1,63 @@
+.player-controls {
+  display: flex;
+  align-self: center;
+  align-items: center;
+}
+
+.button {
+  mask-size: calc(100% - 2px);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: #9e9e9e;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+
+  &.active,
+  &.playback,
+  &.skip {
+    background-color: #212121;
+  }
+
+  &.playback {
+    height: 48px;
+    width: 48px;
+
+    &.play {
+      mask-image: url('/icons/player-play.svg');
+    }
+
+    &.pause {
+      mask-image: url('/icons/player-pause.svg');
+    }
+  }
+
+  &.skip {
+    height: 18px;
+    width: 18px;
+    margin: 0 48px;
+
+    &.prev {
+      mask-image: url('/icons/player-prev.svg');
+    }
+
+    &.next {
+      mask-image: url('/icons/player-next.svg');
+    }
+  }
+
+  &.utils {
+    &.shuffle {
+      height: 16px;
+      width: 16px;
+      mask-image: url('/icons/player-shuffle.svg');
+    }
+
+    &.repeat {
+      height: 18px;
+      width: 18px;
+      mask-image: url('/icons/player-repeat.svg');
+    }
+  }
+}

@@ -1,20 +1,32 @@
 import React from 'react'
 
+import Time from 'components/Time'
+
 import styles from './style.css'
 
 export default ({ currentTime, duration, seekHandler }) => (
   <div className={styles.playerProgress}>
-    <progress
-      max={duration}
+    <Time
       value={currentTime}
-      className={styles.show}
+      className={styles.time}
     />
-    <input
-      type='range'
-      max={duration}
-      value={currentTime}
-      onChange={seekHandler}
-      className={styles.control}
+    <div className={styles.bar}>
+      <progress
+        max={duration}
+        value={currentTime}
+        className={styles.show}
+      />
+      <input
+        type='range'
+        max={duration}
+        value={currentTime}
+        onChange={seekHandler}
+        className={styles.control}
+      />
+    </div>
+    <Time
+      value={duration}
+      className={styles.time}
     />
   </div>
 )

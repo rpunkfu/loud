@@ -1,18 +1,31 @@
 .player-progress {
   align-self: center;
-  position: relative;
+  align-items: center;
   margin-top: 32px;
+  display: flex;
+}
 
+.bar {
+  position: relative;
   width: 560px;
   height: 4px;
+  margin: 0 24px;
+}
+
+.time {
+  color: #bdbdbd;
+  font-size: 14px;
+  transition: color 300ms;
+
+  @nest .player-progress:hover & {
+    color: #212121;
+  }
 }
 
 .show,
 .control {
   -webkit-appearance: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: absolute 0 0 0 0;
   width: 100%;
   outline: 0;
   margin: 0;
@@ -40,7 +53,7 @@
 }
 
 .control {
+  opacity: 0;
   height: 200%;
   top: -50%;
-  opacity: 0;
 }

@@ -4,12 +4,6 @@ import styles from './style.css'
 import PlayerControls from 'containers/Player/components/PlayerControls'
 import PlayerProgress from 'containers/Player/components/PlayerProgress'
 
-const formatSeconds = (num) => {
-  const minutes = (Math.floor(num / 60)).toString(10).padStart(2, '0')
-  const seconds = (Math.floor(num % 60)).toString(10).padStart(2, '0')
-  return `${minutes}:${seconds}`
-}
-
 const closerThan = (x, y, maxDiff) => Math.abs(x - y) < maxDiff
 
 export default class Player extends Component {

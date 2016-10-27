@@ -3,3 +3,8 @@
 :global(*::before) {
   box-sizing: border-box;
 }
+
+:global(html),
+:global(body) {
+  font-family: Menlo, Monospace;
+}

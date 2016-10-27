@@ -1903,9 +1903,15 @@ eslint-config-standard, eslint-config-standard@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-6.2.1.tgz#d3a68aafc7191639e7ee441e7348739026354292"
 
-eslint-config-standard-jsx@3.2.0:
+eslint-config-standard-jsx@^3.0.0, eslint-config-standard-jsx@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-3.2.0.tgz#c240e26ed919a11a42aa4de8059472b38268d620"
+
+eslint-config-standard-react:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-react/-/eslint-config-standard-react-4.2.0.tgz#d15fd25e837e20aff0db32f64fb55d11880eb8d0"
+  dependencies:
+    eslint-config-standard-jsx "^3.0.0"
 
 eslint-plugin-promise@~3.3.0:
   version "3.3.0"

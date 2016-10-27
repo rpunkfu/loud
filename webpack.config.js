@@ -3,6 +3,7 @@ const combineLoaders = require('webpack-combine-loaders')
 
 const postcssNext = require('postcss-cssnext')
 const postcssReporter = require('postcss-reporter')
+const postcssRucksack = require('rucksack-css')
 
 const clientPath = path.join(__dirname, 'client')
 const assetsPath = path.join(__dirname, 'assets')
@@ -53,6 +54,7 @@ module.exports = {
   },
 
   postcss: () => [
+    postcssRucksack(),
     postcssNext({
       browsers: ['last 2 versions', 'IE > 10']
     }),

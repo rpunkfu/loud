@@ -1,8 +1,8 @@
 const path = require('path')
 const combineLoaders = require('webpack-combine-loaders')
 
-const postcssNext = require('postcss-cssnext');
-const postcssReporter = require('postcss-reporter');
+const postcssNext = require('postcss-cssnext')
+const postcssReporter = require('postcss-reporter')
 
 const clientPath = path.join(__dirname, 'client')
 const assetsPath = path.join(__dirname, 'assets')
@@ -30,7 +30,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test:   /\.css$/,
+        test: /\.css$/,
         loader: combineLoaders([
           {
             loader: 'style-loader'
@@ -54,10 +54,10 @@ module.exports = {
 
   postcss: () => [
     postcssNext({
-      browsers: ['last 2 versions', 'IE > 10'],
+      browsers: ['last 2 versions', 'IE > 10']
     }),
     postcssReporter({
-      clearMessages: true,
+      clearMessages: true
     })
   ],
 

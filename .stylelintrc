@@ -1,7 +1,7 @@
 {
     "extends": [
+        "stylelint-config-idiomatic-order",
         "stylelint-config-standard",
-        "stylelint-config-css-modules",
-        "stylelint-config-idiomatic-order"
+        "stylelint-config-css-modules"
     ]
 }

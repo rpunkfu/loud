@@ -1,7 +1,7 @@
 .player-progress {
+  display: flex;
   align-items: center;
   margin-top: 32px;
-  display: flex;
 }
 
 .bar {
@@ -20,32 +20,32 @@
 
 .show,
 .control {
-  -webkit-appearance: none;
   position: absolute 0;
   width: 100%;
-  outline: 0;
   margin: 0;
+  -webkit-appearance: none;
+  outline: 0;
 }
 
 .show {
   height: 100%;
 
   &::-webkit-progress-bar {
+    padding: 0;
     border-radius: 2px;
     background: #e0e0e0;
-    padding: 0;
   }
 
   &::-webkit-progress-value {
+    height: 100%;
     border-radius: 2px;
     background: #424242;
-    height: 100%;
     transition: background 300ms;
   }
 }
 
 .control {
-  opacity: 0;
-  height: 200%;
   top: -50%;
+  height: 200%;
+  opacity: 0;
 }

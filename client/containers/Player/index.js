@@ -16,7 +16,7 @@ export default class Player extends Component {
   constructor (props) {
     super(props)
     this.audioController = document.createElement('audio')
-    this.audioController.src = 'https://goo.gl/fYKBSO'
+    this.audioController.src = 'https://goo.gl/0qDrSa'
     this.audioController.preload = 'auto'
 
     this.audioController

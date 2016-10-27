@@ -1,5 +1,4 @@
 .player-progress {
-  align-self: center;
   align-items: center;
   margin-top: 32px;
   display: flex;
@@ -22,7 +21,7 @@
 .show,
 .control {
   -webkit-appearance: none;
-  position: absolute 0 0 0 0;
+  position: absolute 0;
   width: 100%;
   outline: 0;
   margin: 0;

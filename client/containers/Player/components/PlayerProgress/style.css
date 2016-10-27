@@ -13,8 +13,9 @@
 }
 
 .time {
-  color: #212121;
+  color: #424242;
   font-size: 14px;
+  font-weight: bold;
   transition: color 300ms;
 }
 
@@ -38,7 +39,7 @@
 
   &::-webkit-progress-value {
     border-radius: 2px;
-    background: #212121;
+    background: #424242;
     height: 100%;
     transition: background 300ms;
   }

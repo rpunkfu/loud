@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styles from './style.css'
 
-import PlayerControls from './components/PlayerControls'
+import PlayerControls from 'containers/Player/components/PlayerControls'
+import PlayerProgress from 'containers/Player/components/PlayerProgress'
 
 const formatSeconds = (num) => {
   const minutes = (Math.floor(num / 60)).toString(10).padStart(2, '0')
@@ -9,16 +10,41 @@ const formatSeconds = (num) => {
   return `${minutes}:${seconds}`
 }
 
+const closerThan = (x, y, maxDiff) => Math.abs(x - y) < maxDiff
+
 export default class Player extends Component {
   state = {
+    duration: 0,
+    currentTime: 0,
     isPlaying: false,
-    currentTime: 0
   }
 
   constructor (props) {
     super(props)
     this.audioController = document.createElement('audio')
     this.audioController.src = 'https://goo.gl/fYKBSO'
+    this.audioController.preload = 'auto'
+
+    this.audioController
+      .addEventListener('loadedmetadata', this.handleLoadedMetadata, false)
+    this.audioController
+      .addEventListener('timeupdate', this.handleTimeUpdate, false)
+  }
+
+  handleLoadedMetadata = () => {
+    const { duration } = this.audioController
+    this.setState({ duration })
+  }
+
+  handleTimeUpdate = ({ target }) => {
+    const currentTime = parseFloat(target.currentTime || target.value)
+    this.setState({ currentTime })
+
+    if (closerThan(this.audioController.currentTime, currentTime, 0.01)) {
+      return
+    }
+
+    this.audioController.currentTime = currentTime
   }
 
   togglePlay = () => {
@@ -34,6 +60,11 @@ export default class Player extends Component {
         <PlayerControls
           isPlaying={this.state.isPlaying}
           playHandler={this.togglePlay}
+        />
+        <PlayerProgress
+          duration={this.state.duration}
+          currentTime={this.state.currentTime}
+          seekHandler={this.handleTimeUpdate}
         />
       </div>
     )

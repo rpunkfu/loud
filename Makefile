@@ -9,3 +9,6 @@ lint-css:
 
 lint-js:
 	$(ESLINT) $(JS_FILES)
+
+fix-js:
+	$(ESLINT) $(JS_FILES) --fix

@@ -10,7 +10,7 @@ export default class Player extends Component {
   state = {
     duration: 0,
     currentTime: 0,
-    isPlaying: false,
+    isPlaying: false
   }
 
   constructor (props) {

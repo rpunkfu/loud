@@ -1,0 +1,41 @@
+.player-progress {
+  align-self: center;
+  position: relative;
+  margin-top: 32px;
+
+  width: 560px;
+  height: 4px;
+}
+
+.show,
+.control {
+  -webkit-appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  outline: 0;
+  margin: 0;
+}
+
+.show {
+  height: 100%;
+
+  &::-webkit-progress-bar {
+    border-radius: 2px;
+    background: #e0e0e0;
+    padding: 0;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: 2px;
+    background: #212121;
+    height: 100%;
+  }
+}
+
+.control {
+  height: 200%;
+  top: -50%;
+  opacity: 0;
+}

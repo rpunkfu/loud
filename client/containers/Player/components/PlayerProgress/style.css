@@ -13,13 +13,9 @@
 }
 
 .time {
-  color: #bdbdbd;
+  color: #212121;
   font-size: 14px;
   transition: color 300ms;
-
-  @nest .player-progress:hover & {
-    color: #212121;
-  }
 }
 
 .show,
@@ -42,13 +38,9 @@
 
   &::-webkit-progress-value {
     border-radius: 2px;
-    background: #bdbdbd;
+    background: #212121;
     height: 100%;
     transition: background 300ms;
-
-    @nest .player-progress:hover & {
-      background: #212121;
-    }
   }
 }
 

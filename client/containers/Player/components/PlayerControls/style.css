@@ -8,7 +8,7 @@
   mask-size: calc(100% - 2px);
   mask-repeat: no-repeat;
   mask-position: center;
-  background: #9e9e9e;
+  background-color: #9e9e9e;
   border: 0;
   cursor: pointer;
   outline: 0;
@@ -17,7 +17,7 @@
   &.active,
   &.playback,
   &.skip {
-    background: #212121;
+    background-color: #212121;
   }
 
   &.playback {

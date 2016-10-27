@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Shuffle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Page" transform="translate(-806.000000, -1021.000000)" fill="#000000">
+            <path d="M818.18375,1031.58625 L816.5975,1033.1725 L820.11875,1036.69375 L817.8125,1039 L824,1039 L824,1032.8125 L821.705,1035.1075 L818.18375,1031.58625 L818.18375,1031.58625 Z M817.8125,1021 L820.1075,1023.295 L806,1037.41375 L807.58625,1039 L821.705,1024.8925 L824,1027.1875 L824,1021 L817.8125,1021 Z M813.41375,1026.81625 L807.58625,1021 L806,1022.58625 L811.81625,1028.4025 L813.41375,1026.81625 L813.41375,1026.81625 Z" id="Shuffle"></path>
+        </g>
+    </g>
+</svg>

@@ -5,6 +5,7 @@ const postcssNext = require('postcss-cssnext');
 const postcssReporter = require('postcss-reporter');
 
 const clientPath = path.join(__dirname, 'client')
+const assetsPath = path.join(__dirname, 'assets')
 const outputPath = path.join(__dirname, 'dist', 'client')
 
 module.exports = {
@@ -39,6 +40,7 @@ module.exports = {
             query: {
               modules: true,
               importLoaders: 1,
+              camelCase: 'dashes',
               localIdentName: '[name]__[local]___[hash:base64:5]'
             }
           },
@@ -61,6 +63,6 @@ module.exports = {
 
   resolve: {
     extensions: ['', '.js'],
-    modulesDirectories: ['node_modules', clientPath]
+    modulesDirectories: ['node_modules', clientPath, assetsPath]
   }
 }

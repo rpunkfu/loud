@@ -18,6 +18,8 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler))
 
+app.use(express.static(path.join(__dirname, 'static')))
+
 app.get('*', (req, res) => {
   fs
     .createReadStream(path.join(__dirname, 'static', 'index.html'))

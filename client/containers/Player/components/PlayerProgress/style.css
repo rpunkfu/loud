@@ -29,8 +29,13 @@
 
   &::-webkit-progress-value {
     border-radius: 2px;
-    background: #212121;
+    background: #bdbdbd;
     height: 100%;
+    transition: background 300ms;
+
+    @nest .player-progress:hover & {
+      background: #212121;
+    }
   }
 }
 

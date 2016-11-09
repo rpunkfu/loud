@@ -6,6 +6,7 @@
 .button {
   padding: 0;
   border: 0;
+  margin: 0 24px;
   mask-size: calc(100% - 2px);
   mask-repeat: no-repeat;
   mask-position: center;
@@ -35,7 +36,6 @@
   &.skip {
     width: 18px;
     height: 18px;
-    margin: 0 48px;
 
     &.prev {
       mask-image: url('/icons/player-prev.svg');

@@ -3,12 +3,13 @@ import cx from 'classnames'
 
 import styles from './style.css'
 
-export default ({ isPlaying, playHandler }) => (
+export default ({ isPlaying, playHandler, prevHandler }) => (
   <div className={styles.playerControls}>
     <button
       className={cx(styles.button, styles.utils, styles.shuffle)}
     />
     <button
+      onClick={prevHandler}
       className={cx(styles.button, styles.skip, styles.prev)}
     />
     <button

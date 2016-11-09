@@ -10,13 +10,17 @@ export default class Player extends Component {
   state = {
     duration: 0,
     currentTime: 0,
-    isPlaying: false
+    currentSong: 0,
+    isPlaying: false,
+    songList: [
+      'http://localhost:3030/stream/ZJpeH8IZoa7r.128.mp3',
+    ]
   }
 
   constructor (props) {
     super(props)
     this.audioController = document.createElement('audio')
-    this.audioController.src = 'https://goo.gl/0qDrSa'
+    this.audioController.src = this.state.songList[0]
     this.audioController.preload = 'auto'
 
     this.audioController
@@ -31,7 +35,7 @@ export default class Player extends Component {
   }
 
   handleTimeUpdate = ({ target }) => {
-    const currentTime = parseFloat(target.currentTime || target.value)
+    const currentTime = parseFloat(target.currentTime || target.value || 0)
     this.setState({ currentTime })
 
     if (closerThan(this.audioController.currentTime, currentTime, 0.01)) {
@@ -41,11 +45,28 @@ export default class Player extends Component {
     this.audioController.currentTime = currentTime
   }
 
+  loadPrevSong () {
+    this.audioController.src = this.state.currentSong
+      ? this.state.songList[0]
+      : this.state.songList[1]
+    this.setState({ currentSong: !this.state.currentSong })
+  }
+
   togglePlay = () => {
     this.setState({ isPlaying: !this.state.isPlaying })
     this.state.isPlaying
       ? this.audioController.pause()
       : this.audioController.play()
+  }
+
+  togglePrev = () => {
+    this.audioController.pause()
+
+    this.audioController.currentTime > 2
+      ? this.audioController.currentTime = 0
+      : this.loadPrevSong()
+
+    this.audioController.play()
   }
 
   render () {
@@ -54,6 +75,7 @@ export default class Player extends Component {
         <PlayerControls
           isPlaying={this.state.isPlaying}
           playHandler={this.togglePlay}
+          prevHandler={this.togglePrev}
         />
         <PlayerProgress
           duration={this.state.duration}

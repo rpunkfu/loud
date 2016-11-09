@@ -2,10 +2,12 @@ import React from 'react'
 import { render } from 'react-dom'
 
 import 'root-styles.css'
+import Root from 'containers/Root'
+import configureStore from 'store'
 
-import Player from 'containers/Player'
+const store = configureStore()
 
 render(
-  <Player />,
+  <Root store={store} />,
   document.getElementById('root')
 )

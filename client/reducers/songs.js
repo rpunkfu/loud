@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { handleActions } from 'redux-actions'
 import { FETCH_SUCCESS } from 'constants/songs'
 
 const byId = (state = {}, action) => {
@@ -6,14 +7,9 @@ const byId = (state = {}, action) => {
   return { ...state, ...action.response.entities.songs }
 }
 
-const ids = (state = [], action) => {
-  switch (action.type) {
-    case FETCH_SUCCESS:
-      return action.response.result
-    default:
-      return state
-  }
-}
+const ids = handleActions({
+  [FETCH_SUCCESS]: (_, action) => action.response.result
+}, [])
 
 export default combineReducers({
   byId,

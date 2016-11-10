@@ -1,17 +1,26 @@
 import React from 'react'
+import Hook from 'react-hooks'
 import { connect } from 'react-redux'
+
+import { Map } from 'components/Tools'
 import { fetchSongs } from 'actions/songs'
+import { changeSong } from 'actions/player'
+
+const RawSong = ({ id, name, onClick }) => (
+  <li onClick={onClick(id)}>{name}</li>
+)
+
+const Song = connect(
+  null,
+  dispatch => ({
+    onClick: (id) => () => dispatch(changeSong(id))
+  })
+)(RawSong)
 
 const SongList = ({ fetchSongs, songs }) => (
   <div>
-    {
-      songs.map(s => <li key={s.id}>{s.name}</li>)
-    }
-    <button
-      onClick={fetchSongs}
-    >
-      load more
-    </button>
+    <Map from={songs} to={Song} />
+    <Hook didMount={fetchSongs} />
   </div>
 )
 

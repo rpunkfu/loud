@@ -1,32 +1,38 @@
 import React, { Component } from 'react'
-import styles from './style.css'
+import { connect } from 'react-redux'
 
+import styles from './style.css'
 import PlayerControls from 'containers/Player/components/PlayerControls'
 import PlayerProgress from 'containers/Player/components/PlayerProgress'
 
 const closerThan = (x, y, maxDiff) => Math.abs(x - y) < maxDiff
 
-export default class Player extends Component {
+class Player extends Component {
   state = {
     duration: 0,
     currentTime: 0,
-    currentSong: 0,
     isPlaying: false,
-    songList: [
-      'http://localhost:3030/stream/ZJpeH8IZoa7r.128.mp3'
-    ]
   }
 
   constructor (props) {
     super(props)
     this.audioController = document.createElement('audio')
-    this.audioController.src = this.state.songList[0]
+    this.audioController.src =
+      `http://localhost:3030/stream/${props.currentSong}.128.mp3`
     this.audioController.preload = 'auto'
 
     this.audioController
       .addEventListener('loadedmetadata', this.handleLoadedMetadata, false)
     this.audioController
       .addEventListener('timeupdate', this.handleTimeUpdate, false)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if(nextProps.currentSong === this.props.currentSong) return
+    this.audioController.pause()
+    this.audioController.src =
+      `http://localhost:3030/stream/${nextProps.currentSong}.128.mp3`
+    this.audioController.play()
   }
 
   handleLoadedMetadata = () => {
@@ -86,3 +92,9 @@ export default class Player extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    currentSong: state.player.currentSong
+  })
+)(Player)

@@ -29,15 +29,18 @@ class Player extends Component {
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.currentSong === this.props.currentSong) return
-    this.audioController.pause()
-    this.audioController.src =
-      `http://localhost:3030/stream/${nextProps.currentSong}.128.mp3`
-    this.audioController.play()
+    this.handleSongChange (nextProps.currentSong)
   }
 
   handleLoadedMetadata = () => {
     const { duration } = this.audioController
     this.setState({ duration })
+  }
+
+  handleSongChange (newSong) {
+    if (this.state.isPlaying) this.audioController.pause()
+    this.audioController.src = `http://localhost:3030/stream/${newSong}.128.mp3`
+    if (this.state.isPlaying) this.audioController.play()
   }
 
   handleTimeUpdate = ({ target }) => {

@@ -5,7 +5,6 @@ import Router from 'koa-router'
 const songs = [
   { id: 'VqAjTNFfjDNH', name: 'Kuedo - Bismuth' },
   { id: 'DYM8Ld6aYDfL', name: 'Kuedo - Hourglass' },
-  { id: 'E5DWy6okl07E', name: 'Kuedo - In Your Sleep' },
   { id: 'ruKTyNh4cxf1', name: 'rpunkfu - 80\'s Pop Synth' },
   { id: 'ZJpeH8IZoa7r', name: 'Flyleaf - All Around Me (Acoustic)' }
 ]

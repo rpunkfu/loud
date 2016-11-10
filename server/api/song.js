@@ -1,4 +1,5 @@
 import Koa from 'koa'
+import cors from 'koa-cors'
 import Router from 'koa-router'
 
 const songs = [
@@ -19,6 +20,7 @@ export default () => {
   })
 
   app
+    .use(cors())
     .use(router.routes())
     .use(router.allowedMethods());
 

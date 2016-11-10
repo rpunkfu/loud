@@ -13,7 +13,7 @@ export default class Player extends Component {
     currentSong: 0,
     isPlaying: false,
     songList: [
-      'http://localhost:3030/stream/ZJpeH8IZoa7r.128.mp3',
+      'http://localhost:3030/stream/ZJpeH8IZoa7r.128.mp3'
     ]
   }
 

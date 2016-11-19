@@ -2,12 +2,14 @@ import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
 
 import DevTools from 'containers/DevTools'
+import SongList from 'containers/SongList'
 import Player from 'containers/Player'
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <div>
       <DevTools />
+      <SongList />
       <Player />
     </div>
   </Provider>
